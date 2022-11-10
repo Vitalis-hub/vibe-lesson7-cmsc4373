@@ -53,7 +53,7 @@ export async function home_page() {
                 if(DEV) console.log(e);
                 return;
             }
-            const updateQty = p.qty == null || p.qty == 0? 'And': p.qty;
+            const updateQty = p.qty == null || p.qty == 0? 'Add': p.qty;
             document.getElementById(`item-count-${p.docId}`).innerHTML = updateQty;
             MENU.CartItemCount.innerHTML = `${cart.getTotalQty()}`;
         });
