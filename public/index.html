@@ -22,8 +22,8 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item modal-preauth">
-            <button id="menu-signin" class="btn btn-outline-danger modal-preauth"
-            data-bs-toggle="modal" data-bs-target="#model-signin">Sign In/Up</button>
+            <button id="menu-signin" class="btn btn-outline-danger modal-preauth" data-bs-toggle="modal"
+              data-bs-target="#model-signin">Sign In/Up</button>
           </li>
           <li class="nav-item">
             <button id="menu-home" class="btn btn-outline-primary">Home</button>
@@ -82,6 +82,56 @@
               <button class="btn btn-outline-primary" type="submit">Sign In</button>
             </div>
           </form>
+        </div>
+        <div class="mt-5">
+          No account yet?
+          <button id="button-show-signup-modal" class="btn btn-outline-info">Create New Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Sign Up-->
+  <div class="modal fade" id="modal-signup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modal-signup-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modal-signup-title">Create New Account</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="modal-signup-form">
+            <div>
+              <input type="email" name="email" placeholder="email address" required>
+            </div>
+            <div>
+              <input type="password" name="password" placeholder="password" required minlength="6">
+            </div>
+            <div>
+              <input type="password" name="passwordConfirm" placeholder="confirm password" required minlength="6">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-outline-primary">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Transaction - Purchase history -->
+  <div class="modal fade" id="modal-transaction" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="modal-transaction-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modal-transaction-title"></h1>
+        </div>
+        <div class="modal-body" id="modal-transaction-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

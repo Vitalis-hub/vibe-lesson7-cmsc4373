@@ -5,6 +5,8 @@ import { currentUser } from "../controller/firebase.auth.js";
 import { currency } from "./util.js";
 import { home_page } from "./home_page.js";
 import { disableButton, enabledButton, info} from "./util.js";
+import { checkout } from "../controller/firestore_controller.js";
+import { DEV } from "../model/constants.js";
 export function addEventListeners() {
     MENU.Cart.addEventListener('click', async () => {
         history.pushState(null, null, ROUTE_PATHNAMES.CART);
@@ -79,7 +81,7 @@ export async function cart_page() {
         const label = disableButton(checkoutButton);
         try {
             // charging is done! ==> for students in term project
-            // save to Firebase (await) ==> Part 2 of lesson 3
+            await checkout(cart);
             info('Success!', 'Checkout Complete!');
             cart.clear();
             MENU.CartItemCount.innerHTML = 0;
